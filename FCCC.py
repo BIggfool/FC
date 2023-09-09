@@ -12,14 +12,14 @@ def main():
     # Header
     st.title("生日快乐！可爱的超超宝宝 🎂🎉")
     st.image(
-        Image.open('线条小狗.jpg').resize((300, 250)),  # Increased image size
+        Image.open('线条小狗.jpg').resize((100, 100)),  # Increased image size
         use_column_width=True,
-        caption="左边是宝宝马，右边是我",  # Added a caption
+        caption="左边是宝宝，右边是我",  # Added a caption
         output_format="JPEG",  # Set the image format for better quality
     )
 
     # User Input
-    st.subheader("请小公主输入一下下面的东西哦")
+    st.subheader("小公主动动手指")
     fn = st.text_input('请输入你的爱称：（小宝、宝宝、乖乖宝、超超）')
     mar_display = ('有', '有，而且甩也甩不掉', '有一个爱宝宝一辈子的')
     mar = st.selectbox("你是否有一个爱你的男人？", mar_display)
