@@ -2,17 +2,24 @@ import streamlit as st
 from PIL import Image
 
 def main():
+    # Page Configuration
     st.set_page_config(
         page_title="生日快乐！可爱的超超宝宝",
-        page_icon="🎉",
+        page_icon="🎈",  # Changed the icon to a balloon emoji
         layout="wide",
     )
 
     # Header
-    st.title("生日快乐！可爱的超超宝宝")
-    st.image(Image.open('线条小狗.jpg').resize((300, 200)), use_column_width=False)
+    st.title("生日快乐！可爱的超超宝宝 🎂🎉")
+    st.image(
+        Image.open('线条小狗.jpg').resize((400, 300)),  # Increased image size
+        use_column_width=True,
+        caption="可爱的小狗狗",  # Added a caption
+        output_format="JPEG",  # Set the image format for better quality
+    )
 
     # User Input
+    st.subheader("告诉我一些关于你的事情，亲爱的")
     fn = st.text_input('请输入你的爱称：（小宝、宝宝、乖乖宝、超超）')
     mar_display = ('有', '有，而且甩也甩不掉', '有一个爱宝宝一辈子的')
     mar = st.selectbox("你是否有一个爱你的男人？", mar_display)
@@ -21,10 +28,13 @@ def main():
     prop_display = ('是', '他这辈子只喜欢宝宝一个女孩', '已经被宝宝迷死了')
     prop = st.selectbox("他是否一辈子只爱宝宝一个人，永远被宝宝迷住", prop_display)
 
+    # Add some decorative elements (emojis)
+    st.write("🌟✨🌈")
+
     # Display result on button click
     if st.button("Submit"):
         message = get_message(fn)
-        st.write(message)
+        st.success(message)  # Show a success message box with the message
 
 def get_message(fn):
     messages = {
