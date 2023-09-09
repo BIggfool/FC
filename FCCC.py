@@ -12,7 +12,7 @@ def main():
     # Header
     st.title("生日快乐！可爱的超超宝宝 🎂🎉")
     st.image(
-        Image.open('线条小狗.jpg').resize((100, 100)),  # Increased image size
+        Image.open('线条小狗.jpg').resize((400, 300)),  # Increased image size
         use_column_width=True,
         caption="左边是宝宝，右边是我",  # Added a caption
         output_format="JPEG",  # Set the image format for better quality
